@@ -1,7 +1,6 @@
 
 Part 2 Exercise 1-2
 ----------------------- 
-
 gymimpundu@Impundus-iMac Git-Advanced % git checkout -b ft/new-feature
 
 Switched to a new branch 'ft/new-feature'
