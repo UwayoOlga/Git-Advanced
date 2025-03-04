@@ -1,1 +1,31 @@
-New branche's first file 
+
+Part 2 Exercise 1-2
+----------------------- 
+gymimpundu@Impundus-iMac Git-Advanced % git checkout -b ft/new-feature
+
+Switched to a new branch 'ft/new-feature'
+gymimpundu@Impundus-iMac Git-Advanced % touch feature.txt
+
+gymimpundu@Impundus-iMac Git-Advanced % git add feature.txt
+gymimpundu@Impundus-iMac Git-Advanced % git commit -m 'Implemented core functionality for new feature'
+[ft/new-feature 9648756] Implemented core functionality for new feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+gymimpundu@Impundus-iMac Git-Advanced % git push origin new-feature 
+error: src refspec new-feature does not match any
+error: failed to push some refs to 'https://github.com/UwayoOlga/Git-Advanced.git'
+gymimpundu@Impundus-iMac Git-Advanced % git push origin ft/new-feature                                
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 319 bytes | 319.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/new-feature' on GitHub by visiting:
+remote:      https://github.com/UwayoOlga/Git-Advanced/pull/new/ft/new-feature
+remote: 
+To https://github.com/UwayoOlga/Git-Advanced.git
+ * [new branch]      ft/new-feature -> ft/new-feature
+gymimpundu@Impundus-iMac Git-Advanced % 
