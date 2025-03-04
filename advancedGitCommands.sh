@@ -1,4 +1,6 @@
 
+      # Part 1 
+
 touch test{1..4}.md
 git add test1.md && git commit -m "chore: Create initial file"
 git add test2.md && git commit -m "chore: Create another file"
@@ -474,3 +476,328 @@ remote: Resolving deltas: 100% (5/5), done.
 To https://github.com/UwayoOlga/Git-Advanced.git
    8bd2969..ad6fa4a  main -> main
 gymimpundu@Impundus-iMac Git-Advanced % 
+
+
+
+
+             # Part 2 
+
+ # Feature Branch Creation
+
+gymimpundu@Impundus-iMac Git-Advanced % git checkout -b ft/new-feature
+Switched to a new branch 'ft/new-feature'
+---------------------------------------------------------------------------------------------------------------
+# Working on the Feature Branch:
+
+gymimpundu@Impundus-iMac Git-Advanced % touch feature.txt
+gymimpundu@Impundus-iMac Git-Advanced % git add feature.txt
+gymimpundu@Impundus-iMac Git-Advanced % git commit -m 'Implemented core functionality for new feature'
+[ft/new-feature 9648756] Implemented core functionality for new feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+gymimpundu@Impundus-iMac Git-Advanced % git push origin ft/new-feature                                
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 319 bytes | 319.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/new-feature' on GitHub by visiting:
+remote:      https://github.com/UwayoOlga/Git-Advanced/pull/new/ft/new-feature
+remote: 
+To https://github.com/UwayoOlga/Git-Advanced.git
+ * [new branch]      ft/new-feature -> ft/new-feature
+gymimpundu@Impundus-iMac Git-Advanced % 
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Impundus-iMac:Git-Advanced gymimpundu$ git branch
+  ft/branch
+* ft/new-feature
+  main
+Impundus-iMac:Git-Advanced gymimpundu$ git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 4 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Impundus-iMac:Git-Advanced gymimpundu$ git pull origin main
+From https://github.com/UwayoOlga/Git-Advanced
+ * branch            main       -> FETCH_HEAD
+Updating e0ebe0f..fc9f89f
+Fast-forward
+ feature.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+Impundus-iMac:Git-Advanced gymimpundu$ touch readme.txt
+Impundus-iMac:Git-Advanced gymimpundu$ git add readme.txt
+Impundus-iMac:Git-Advanced gymimpundu$ git commit -m "Updated project readme"
+[main c8f1544] Updated project readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+Impundus-iMac:Git-Advanced gymimpundu$ git checkout ft/new-feature
+error: Your local changes to the following files would be overwritten by checkout:
+        feature.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+Impundus-iMac:Git-Advanced gymimpundu$ git branch
+  ft/branch
+  ft/new-feature
+* main
+Impundus-iMac:Git-Advanced gymimpundu$ git stash
+Saved working directory and index state WIP on main: c8f1544 Updated project readme
+Impundus-iMac:Git-Advanced gymimpundu$ git checkout ft/new-feature
+Switched to branch 'ft/new-feature'
+Impundus-iMac:Git-Advanced gymimpundu$ git add feature.txt
+Impundus-iMac:Git-Advanced gymimpundu$ git commit -m"Implemented core functionality for new feature"
+On branch ft/new-feature
+nothing to commit, working tree clean
+Impundus-iMac:Git-Advanced gymimpundu$ git add feature.txt
+Impundus-iMac:Git-Advanced gymimpundu$ git commit -m"Implemented core functionality for new feature"
+[ft/new-feature 3012d49] Implemented core functionality for new feature
+ 1 file changed, 1 deletion(-)
+Impundus-iMac:Git-Advanced gymimpundu$ gti push origin ft/new-feature
+bash: gti: command not found
+Impundus-iMac:Git-Advanced gymimpundu$ git push origin ft/new-feature
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.09 KiB | 1.09 MiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+To https://github.com/UwayoOlga/Git-Advanced.git
+   9648756..3012d49  ft/new-feature -> ft/new-feature
+Impundus-iMac:Git-Advanced gymimpundu$ checkout main
+bash: checkout: command not found
+Impundus-iMac:Git-Advanced gymimpundu$ git checkout main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 1 and 3 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+---------------------------------------------------------------------------------------------------------------------
+  # 4. Local vs. Remote Branches
+
+Impundus-iMac:Git-Advanced gymimpundu$ git push origin main 
+To https://github.com/UwayoOlga/Git-Advanced.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/UwayoOlga/Git-Advanced.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Impundus-iMac:Git-Advanced gymimpundu$ git pull origin main
+From https://github.com/UwayoOlga/Git-Advanced
+ * branch            main       -> FETCH_HEAD
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false   
+hint:   git config pull.rebase true    
+hint:   git config pull.ff only       
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+Impundus-iMac:Git-Advanced gymimpundu$ git pull origin main --no-rebase
+From https://github.com/UwayoOlga/Git-Advanced
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ feature.txt | 32 +++++++++++++++++++++++++++++++-
+ 1 file changed, 31 insertions(+), 1 deletion(-)
+Impundus-iMac:Git-Advanced gymimpundu$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 620 bytes | 620.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/UwayoOlga/Git-Advanced.git
+   44a392a..3b6ba9c  main -> main
+---------------------------------------------------------------------------------------------------------------------
+   # 5. Branch Deletion
+
+Impundus-iMac:Git-Advanced gymimpundu$ git branch -d ft/new-feature
+Deleted branch ft/new-feature (was 3012d49).
+---------------------------------------------------------------------------------------------------------------------
+# 6.Creating a Branch from a Commit
+Impundus-iMac:Git-Advanced gymimpundu$ git log --oneline
+ba090b9 (HEAD -> main, origin/main, origin/HEAD) Delete README.md
+3b6ba9c Merge branch 'main' of https://github.com/UwayoOlga/Git-Advanced
+44a392a Merge pull request #3 from UwayoOlga/ft/new-feature
+3012d49 (origin/ft/new-feature) Implemented core functionality for new feature
+c8f1544 Updated project readme
+fc9f89f Merge pull request #2 from UwayoOlga/ft/new-feature
+4dabb85 Implemented core functionality for new feature
+9648756 Implemented core functionality for new feature
+e5aa902 Merge pull request #1 from UwayoOlga/ft/branch
+e0ebe0f  Part 1 answers tracking file
+ad6fa4a Implemented test 5
+4db9e73 (origin/ft/branch, ft/branch) Implemented test 5
+2cb522d create second file
+9f68004 answers tracking file
+2ddb0a3 Create Fourth File
+e155600 Create Third File
+3ae025d chore: Create initial file
+8bd2969 Initial commit
+  
+Impundus-iMac:Git-Advanced gymimpundu$ git checkout -b ft/new-branch-from-commit 44a392a
+Switched to a new branch 'ft/new-branch-from-commit'
+Impundus-iMac:Git-Advanced gymimpundu$ git branch 
+  ft/branch
+* ft/new-branch-from-commit
+  main
+Impundus-iMac:Git-Advanced gymimpundu$ touch part2.md
+Impundus-iMac:Git-Advanced gymimpundu$ git add part2.md
+Impundus-iMac:Git-Advanced gymimpundu$ git commit -m'part2 answers'
+[ft/new-branch-from-commit fe04e40] part2 answers
+ 1 file changed, 46 insertions(+)
+ create mode 100644 part2.md
+---------------------------------------------------------------------------------------------------------------------
+# 7. Branch Merging
+
+Impundus-iMac:Git-Advanced gymimpundu$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Impundus-iMac:Git-Advanced gymimpundu$ git merge ft/new-branch-from-commit
+Merge made by the 'ort' strategy.
+ part2.md | 46 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+ create mode 100644 part2.md
+Impundus-iMac:Git-Advanced gymimpundu$ git push origin ft/new-branch-from-commit
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 849 bytes | 849.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/new-branch-from-commit' on GitHub by visiting:
+remote:      https://github.com/UwayoOlga/Git-Advanced/pull/new/ft/new-branch-from-commit
+remote: 
+To https://github.com/UwayoOlga/Git-Advanced.git
+ * [new branch]      ft/new-branch-from-commit -> ft/new-branch-from-commit
+---------------------------------------------------------------------------------------------------------------------
+
+ # 9. Renaming Branches
+
+Impundus-iMac:Git-Advanced gymimpundu$ git branch -m ft/new-branch-from-commit ft/improved-branch-name
+Impundus-iMac:Git-Advanced gymimpundu$ git branch 
+  ft/branch
+  ft/improved-branch-name
+* main 
+Impundus-iMac:Git-Advanced gymimpundu$ git push origin ft/improved-branch-name
+
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'ft/improved-branch-name' on GitHub by visiting:
+remote:      https://github.com/UwayoOlga/Git-Advanced/pull/new/ft/improved-branch-name
+remote: 
+To https://github.com/UwayoOlga/Git-Advanced.git
+ * [new branch]      ft/improved-branch-name -> ft/improved-branch-name
+Impundus-iMac:Git-Advanced gymimpundu$ 
+Impundus-iMac:Git-Advanced gymimpundu$ git branch
+  ft/branch
+  ft/improved-branch-name
+* main
+---------------------------------------------------------------------------------------------------------------------
+# 10 Checking Out Detached HEAD
+
+Impundus-iMac:Git-Advanced gymimpundu$ git log --oneline
+f252a1e (HEAD -> main) Merge branch 'ft/new-branch-from-commit'
+fe04e40 (origin/ft/improved-branch-name, ft/improved-branch-name) part2 answers
+ba090b9 Delete README.md
+3b6ba9c Merge branch 'main' of https://github.com/UwayoOlga/Git-Advanced
+44a392a Merge pull request #3 from UwayoOlga/ft/new-feature
+3012d49 (origin/ft/new-feature) Implemented core functionality for new feature
+c8f1544 Updated project readme
+fc9f89f Merge pull request #2 from UwayoOlga/ft/new-feature
+4dabb85 Implemented core functionality for new feature
+9648756 Implemented core functionality for new feature
+e5aa902 Merge pull request #1 from UwayoOlga/ft/branch
+e0ebe0f  Part 1 answers tracking file
+ad6fa4a Implemented test 5
+4db9e73 (origin/ft/branch, ft/branch) Implemented test 5
+2cb522d create second file
+9f68004 answers tracking file
+2ddb0a3 Create Fourth File
+e155600 Create Third File
+3ae025d chore: Create initial file
+8bd2969 Initial commit
+Impundus-iMac:Git-Advanced gymimpundu$ git checkout ba090b9
+Note: switching to 'ba090b9'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ba090b9 Delete README.md
+Impundus-iMac:Git-Advanced gymimpundu$ git checkout main
+Previous HEAD position was ba090b9 Delete README.md
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+Impundus-iMac:Git-Advanced gymimpundu$ git log --oneline
+f252a1e (HEAD -> main) Merge branch 'ft/new-branch-from-commit'
+fe04e40 (origin/ft/improved-branch-name, ft/improved-branch-name) part2 answers
+ba090b9 Delete README.md
+3b6ba9c Merge branch 'main' of https://github.com/UwayoOlga/Git-Advanced
+44a392a Merge pull request #3 from UwayoOlga/ft/new-feature
+3012d49 (origin/ft/new-feature) Implemented core functionality for new feature
+c8f1544 Updated project readme
+fc9f89f Merge pull request #2 from UwayoOlga/ft/new-feature
+4dabb85 Implemented core functionality for new feature
+9648756 Implemented core functionality for new feature
+e5aa902 Merge pull request #1 from UwayoOlga/ft/branch
+e0ebe0f  Part 1 answers tracking file
+ad6fa4a Implemented test 5
+4db9e73 (origin/ft/branch, ft/branch) Implemented test 5
+2cb522d create second file
+9f68004 answers tracking file
+2ddb0a3 Create Fourth File
+e155600 Create Third File
+3ae025d chore: Create initial file
+8bd2969 Initial commit
+Impundus-iMac:Git-Advanced gymimpundu$ git push origin main
+To https://github.com/UwayoOlga/Git-Advanced.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/UwayoOlga/Git-Advanced.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Impundus-iMac:Git-Advanced gymimpundu$ git pull origin main
+From https://github.com/UwayoOlga/Git-Advanced
+ * branch            main       -> FETCH_HEAD
+
+Impundus-iMac:Git-Advanced gymimpundu$ git pull origin main --no-rebase
+From https://github.com/UwayoOlga/Git-Advanced
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+Impundus-iMac:Git-Advanced gymimpundu$ git push origin main
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 454 bytes | 454.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/UwayoOlga/Git-Advanced.git
+   e3944f5..7e4124e  main -> main
+Impundus-iMac:Git-Advanced gymimpundu$ 
