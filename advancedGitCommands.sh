@@ -801,3 +801,29 @@ Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/UwayoOlga/Git-Advanced.git
    e3944f5..7e4124e  main -> main
 Impundus-iMac:Git-Advanced gymimpundu$ 
+
+# Part 3
+ 
+   13  git push origin main
+   14  git puull origin main 
+   15  git pull origin main 
+   16  git add. 
+   17  git add . 
+   18  git commit -m 'testing gitignore file'
+   19  git branch 
+   20  checkout ft/branch 
+   21  git branch -r 
+   22  git add .
+   23  git commit -m'testing pushing'
+   24  git push origin main 
+   25  git tag v1.0
+   26  git tag
+   27  git push origin v1.0
+   28  git add .
+   29  git commit -m' deleting the unwanted file'
+   30  git push origin
+   31  history 
+Ubumwes-iMac:Git-Advanced ubumweinnovation$ 
+
+
+
