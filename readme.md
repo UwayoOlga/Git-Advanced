@@ -481,7 +481,7 @@ gymimpundu@Impundus-iMac Git-Advanced %
 
 
              # Part 2 
-
+```
  # Feature Branch Creation
 
 gymimpundu@Impundus-iMac Git-Advanced % git checkout -b ft/new-feature
@@ -801,9 +801,11 @@ Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/UwayoOlga/Git-Advanced.git
    e3944f5..7e4124e  main -> main
 Impundus-iMac:Git-Advanced gymimpundu$ 
-
+ 
+ ```
 # Part 3
  
+ ```
    13  git push origin main
    14  git puull origin main 
    15  git pull origin main 
