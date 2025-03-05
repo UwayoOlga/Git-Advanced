@@ -1,6 +1,7 @@
 
       # Part 1 
-```
+
+```bash
 touch test{1..4}.md
 git add test1.md && git commit -m "chore: Create initial file"
 git add test2.md && git commit -m "chore: Create another file"
@@ -476,12 +477,13 @@ remote: Resolving deltas: 100% (5/5), done.
 To https://github.com/UwayoOlga/Git-Advanced.git
    8bd2969..ad6fa4a  main -> main
 gymimpundu@Impundus-iMac Git-Advanced % 
+
 ``` 
 
 
 
              # Part 2 
-```
+```bash 
  # Feature Branch Creation
 
 gymimpundu@Impundus-iMac Git-Advanced % git checkout -b ft/new-feature
@@ -805,7 +807,7 @@ Impundus-iMac:Git-Advanced gymimpundu$
  ```
 # Part 3
  
- ```
+ ```bash
    13  git push origin main
    14  git puull origin main 
    15  git pull origin main 
