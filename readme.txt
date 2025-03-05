@@ -1,6 +1,6 @@
 
       # Part 1 
-
+```
 touch test{1..4}.md
 git add test1.md && git commit -m "chore: Create initial file"
 git add test2.md && git commit -m "chore: Create another file"
@@ -476,7 +476,7 @@ remote: Resolving deltas: 100% (5/5), done.
 To https://github.com/UwayoOlga/Git-Advanced.git
    8bd2969..ad6fa4a  main -> main
 gymimpundu@Impundus-iMac Git-Advanced % 
-
+``` 
 
 
 
